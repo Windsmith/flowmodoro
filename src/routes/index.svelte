@@ -39,8 +39,20 @@
 		<div class="flex flex-row justify-center">
 			<input
 				bind:value={minutes}
+				on:input={() => {
+					if (!/^\d+$/.test(minutes)) {
+						minutes = minutes.slice(0, -1);
+					}
+				}}
 				on:change={() => {
-					if (/[0-9]{2}/.test(minutes)) {
+					if (minutes == '') minutes = 0;
+
+					let intMinutes = parseInt(minutes);
+
+					if (intMinutes > 60) {
+						minutes = 60;
+					} else {
+						minutes = parseInt(minutes);
 					}
 				}}
 				maxlength="2"
