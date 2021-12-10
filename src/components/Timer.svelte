@@ -1,5 +1,26 @@
 <script>
 	export let timerRunning = false;
+	export let position;
+
+	let timerStyle = {};
+	$: {
+		if (position == 'first') {
+			timerStyle = {
+				inputStyle: 'text-gray-200 text-6xl text-center bg-gray-900 w-3/12',
+				spaceStyle: 'text-gray-200 text-6xl text-center'
+			};
+		} else if (position == 'second') {
+			timerStyle = {
+				inputStyle: 'text-gray-400 text-5xl text-center bg-gray-900 w-2/12',
+				spaceStyle: 'text-gray-400 text-5xl text-center'
+			};
+		} else if (position == 'third') {
+			timerStyle = {
+				inputStyle: 'text-gray-500 text-4xl text-center bg-gray-900 w-2/12',
+				spaceStyle: 'text-gray-500 text-4xl text-center'
+			};
+		}
+	}
 
 	let timerid;
 	let minutes = 25;
@@ -53,9 +74,9 @@
 			}
 		}}
 		maxlength="2"
-		class="text-gray-200 text-6xl text-center bg-gray-900 w-3/12"
+		class={timerStyle.inputStyle}
 	/>
-	<span class="text-gray-200 text-6xl text-center">:</span>
+	<span class={timerStyle.spaceStyle}>:</span>
 	<input
 		bind:value={secondText}
 		on:input={() => {
@@ -77,6 +98,6 @@
 			}
 		}}
 		maxlength="2"
-		class="text-gray-200 text-6xl text-center bg-gray-900 w-3/12"
+		class={timerStyle.inputStyle}
 	/>
 </div>

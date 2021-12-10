@@ -6,9 +6,9 @@
 
 <div class="flex flex-col justify-center h-screen">
 	<div class="mb-10">
-		<Timer timerRunning={timerStart} />
-		<p class="text-gray-500 text-4xl text-center">5:00</p>
-		<p class="text-gray-700 text-2xl text-center">30:00</p>
+		<Timer timerRunning={timerStart} position="first" />
+		<Timer position="second" />
+		<Timer position="third" />
 	</div>
 	<button
 		on:click={() => (timerStart ? (timerStart = false) : (timerStart = true))}
