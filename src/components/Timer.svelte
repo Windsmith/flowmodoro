@@ -12,7 +12,7 @@
 		} else if (position == 'second') {
 			timerStyle = {
 				inputStyle: 'text-gray-400 text-5xl text-center bg-gray-900 w-2/12',
-				spaceStyle: 'text-gray-400 text-5xl text-center'
+				spaceStyle: 'text-gray-400 text-5xl mx-1 text-center'
 			};
 		} else if (position == 'third') {
 			timerStyle = {

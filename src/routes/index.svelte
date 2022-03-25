@@ -7,12 +7,11 @@
 <div class="flex flex-col justify-center h-screen">
 	<div class="mb-10">
 		<Timer timerRunning={timerStart} position="first" />
-		<Timer position="second" />
-		<Timer position="third" />
 	</div>
 	<button
 		on:click={() => (timerStart ? (timerStart = false) : (timerStart = true))}
 		class="text-gray-200 text-4xl border-gray-200 border-2 p-4 px-8 mx-auto rounded-2xl active:border-gray-500 active:text-gray-400"
-		>Start!
+	>
+		{timerStart ? 'Pause' : 'Start!'}
 	</button>
 </div>
